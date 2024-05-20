@@ -11,22 +11,25 @@ import collections
 
 # Time complexity O(n^2)
 def delete_nth_naive(array, n):
-    ans = []
+    result = []
     for num in array:
-        if ans.count(num) < n:
-            ans.append(num)
-    return ans
+        """Python List count() method returns the count of the occurrences of a given element in a list."""
+        if result.count(num) < n:
+            result.append(num)
+    return result
 
 
 # Time Complexity O(n), using hash tables.
 def delete_nth(array, n):
     result = []
-    counts = collections.defaultdict(int)  # keep track of occurrences
+    """defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. 
+    It provides a default value for the key that does not exists."""
+    occurrences = collections.defaultdict(int)  # keep track of occurrences
 
     for i in array:
 
-        if counts[i] < n:
+        if occurrences[i] < n:
             result.append(i)
-            counts[i] += 1
+            occurrences[i] += 1
 
     return result
