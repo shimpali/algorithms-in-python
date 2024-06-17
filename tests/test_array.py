@@ -1,7 +1,7 @@
 from algorithms.arrays import (
     delete_nth, delete_nth_naive,
     flatten_iter, flatten,
-    # garage,
+    garage,
     # josephus,
     # longest_non_repeat_v1, longest_non_repeat_v2,
     # get_longest_non_repeat_v1, get_longest_non_repeat_v2,
@@ -125,20 +125,20 @@ class TestFlatten(unittest.TestCase):
         self.assertRaises(StopIteration, next, flattened)
 
 
-# class TestGarage(unittest.TestCase):
-#
-#     def test_garage(self):
-#
-#         initial = [1, 2, 3, 0, 4]
-#         final = [0, 3, 2, 1, 4]
-#         steps, seq = garage(initial, final)
-#
-#         self.assertEqual(steps, 4)
-#         self.assertListEqual(seq, [[0, 2, 3, 1, 4],
-#                                    [2, 0, 3, 1, 4],
-#                                    [2, 3, 0, 1, 4],
-#                                    [0, 3, 2, 1, 4]])
-#
+class TestGarage(unittest.TestCase):
+
+    def test_garage(self):
+
+        initial = [1, 2, 3, 0, 4]
+        final = [0, 3, 2, 1, 4]
+        steps, seq = garage(initial, final)
+
+        self.assertEqual(steps, 4)
+        self.assertListEqual(seq, [[0, 2, 3, 1, 4],
+                                   [2, 0, 3, 1, 4],
+                                   [2, 3, 0, 1, 4],
+                                   [0, 3, 2, 1, 4]])
+
 #
 # class TestLongestNonRepeat(unittest.TestCase):
 #
