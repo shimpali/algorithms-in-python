@@ -7,15 +7,15 @@ def selection_sort(arr, simulation=False):
         print("iteration", iteration, ":", *arr)
 
     for i in range(len(arr)):
-        minimum = i
+        lowestNumberIndex = i
 
         for j in range(i + 1, len(arr)):
             # "Select" the correct value
-            if arr[j] < arr[minimum]:
-                minimum = j
+            if arr[j] < arr[lowestNumberIndex]:
+                lowestNumberIndex = j
 
-        if i != minimum:
-            arr[minimum], arr[i] = arr[i], arr[minimum]
+        if i != lowestNumberIndex:
+            arr[lowestNumberIndex], arr[i] = arr[i], arr[lowestNumberIndex]
 
         if simulation:
             iteration = iteration + 1
